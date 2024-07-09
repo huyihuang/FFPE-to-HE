@@ -1,0 +1,1 @@
+from models.cellpose.version import version, version_str
