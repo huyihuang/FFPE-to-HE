@@ -9,9 +9,8 @@ git clone https://github.com/huyihuang/FFPE-to-HE && cd FFPE-to-HE
 ```
 - Create a conda environment and activate it:
 ```shell
-conda create -n FFPE-to-HE python==3.8
+conda env create -f py38.yml
 conda activate FFPE-to-HE
-pip install -r requirements.txt
 ```
 
 ## Data Preprocess
@@ -58,4 +57,4 @@ python test_epochs_imgAndcrit.py --dataroot [DATASET DIR] --name --name [EXPERIM
 Please cite our paper if this work is helpful to your research.
 
 ## Contact
-If you have any questions, please contact Qiong Peng (qpeng@stu.xmu.edu.cn).
+If you have any questions, please contact Yihuang Hu (huyihuang@stu.xmu.edu.cn).
