@@ -39,9 +39,17 @@ conda activate FFPE-to-HE
                 └────── test_N.jpg
 
 ## Training
+- train pix2pixHD without vgg_loss as baseline 
 ```shell
-python train.py --dataroot [DATASET DIR] --name [EXPERIMENT NAME] --netD_cat 1 \
---no_instance --no_L1_loss --no_vgg_loss --no_cp_loss --save_epoch_freq 20 --gpu_ids 0
+python train.py --dataroot [DATASET DIR] --name [EXPERIMENT NAME] --no_instance --no_L1_loss --no_vgg_loss --no_cp_loss --netD_cat -1 --save_epoch_freq 20 --gpu_ids 0
+```
+- train pix2pixHD with only the HE image as the input to the discriminator (remove the FFPE image)
+```shell
+python train.py --dataroot [DATASET DIR] --name [EXPERIMENT NAME] --no_instance --no_L1_loss --no_vgg_loss --no_cp_loss --netD_cat 0 --save_epoch_freq 20 --gpu_ids 0
+```
+- train pix2pixHD with our method (use cp_loss and cell segmentation mask)
+```shell
+python train.py --dataroot [DATASET DIR] --name [EXPERIMENT NAME] --no_instance --no_L1_loss --no_vgg_loss --netD_cat 1 --save_epoch_freq 20 --gpu_ids 0
 ```
 
 ## Inference
