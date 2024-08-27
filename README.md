@@ -10,7 +10,7 @@ git clone https://github.com/huyihuang/FFPE-to-HE && cd FFPE-to-HE
 - Create a conda environment and activate it:
 ```shell
 conda env create -f py38.yml
-conda activate FFPE-to-HE
+conda activate py38
 ```
 
 ## Data Preprocess
